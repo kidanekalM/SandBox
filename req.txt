@@ -1,0 +1,21 @@
+
+Entities:
+1. Customers: Individuals or organizations who purchase products or services from the company.
+2. Leads: Potential customers who have shown interest in the company's products or services.
+3. Contacts: Individuals or organizations with whom the company has a relationship, including customers, leads, and other stakeholders.
+4. Opportunities: Potential sales deals or projects that the company is pursuing.
+5. Accounts: Organizations or companies that have a business relationship with the company.
+
+Features:
+1. Contact management: Storing and managing customer and lead information, including contact details, interactions, and preferences.
+    directly send email
+    group contact by filter 
+
+2. Sales automation: Managing sales processes, tracking opportunities, and automating tasks such as lead scoring and follow-ups.
+3. Marketing automation: Creating and managing marketing campaigns, tracking customer engagement, and analyzing campaign performance.
+4. Customer service management: Handling customer inquiries, complaints, and support requests through various channels such as phone, email, chat, and social media.
+5. Analytics and reporting: Generating reports on sales performance, customer behavior, marketing effectiveness, and other key metrics to inform decision-making.
+6. Integration with other systems: Connecting CRM with other business systems such as ERP (Enterprise Resource Planning), marketing automation tools, and e-commerce platforms to streamline data flow and improve efficiency.
+
+
+
