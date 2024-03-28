@@ -9,25 +9,25 @@ body{
     background-color: #ebf4ff;
 }
 div.head{
-    height: 10rem;
-    width: 10rem;
+    height: 11rem;
+    width: 11rem;
     border-radius: 10rem 0rem 10rem 10rem;
     background-color: rgb(0, 192, 0);
     border: ridge;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     transform: rotate(-45deg);
 }
 .eyeCont{
     display: flex;
-    width: 100%;
+    width: 70%;
     height: max-content;
     align-items: center;
     transform: rotate(45deg);
     position: relative;
     left: 3rem;
-    top: 3rem;
+    top: 2rem;
 }
 .eye{
     height: 3rem;
@@ -48,12 +48,14 @@ div.head{
 
 }
 .mouth{
-    height: .5rem;
-    width: 3rem;
-    border-radius: 3rem;
-    background-color: black;
+    height: 5rem;
+    width: 9rem;
+
+    border: .5rem black solid;
+    border-top: none;
+    border-radius: 0rem 0rem 7rem 7rem;
     transform: rotate(45deg);
     position: relative;
-    top: 7rem;
-    right: 5rem;
+    top: -.1rem;
+    left: -1rem;
 }
