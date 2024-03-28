@@ -1,61 +1,66 @@
-:root{
-    --bodyCol : rgb(90, 2, 2);
+:root {
+  --bodyCol: rgb(90, 2, 2);
 }
-body{
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ebf4ff;
-}
-div.head{
-    height: 11rem;
-    width: 11rem;
-    border-radius: 10rem 0rem 10rem 10rem;
-    background-color: rgb(0, 192, 0);
-    border: ridge;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: rotate(-45deg);
-}
-.eyeCont{
-    display: flex;
-    width: 70%;
-    height: max-content;
-    align-items: center;
-    transform: rotate(45deg);
-    position: relative;
-    left: 3rem;
-    top: 2rem;
-}
-.eye{
-    height: 3rem;
-    width: 3rem;
-    background-color: white;
-    border-radius: 2rem 1.5rem;
-    transform: rotate(-45deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.pupil{
-    background-color: black;
-    box-shadow: 0rem 0rem .1rem .3rem red;
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 1rem;
 
+body {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebf4ff;
 }
-.mouth{
-    height: 5rem;
-    width: 9rem;
 
-    border: .5rem black solid;
-    border-top: none;
-    border-radius: 0rem 0rem 7rem 7rem;
-    transform: rotate(45deg);
-    position: relative;
-    top: -.1rem;
-    left: -1rem;
+div.head {
+  height: 11rem;
+  width: 11rem;
+  border-radius: 10rem 0rem 10rem 10rem;
+  background-color: rgb(0, 192, 0);
+  border: ridge;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: rotate(-45deg);
+}
+
+.eyeCont {
+  display: flex;
+  width: 70%;
+  height: max-content;
+  align-items: center;
+  transform: rotate(45deg);
+  position: relative;
+  left: 3rem;
+  top: 2rem;
+}
+
+.eye {
+  height: 3rem;
+  width: 3rem;
+  background-color: white;
+  border-radius: 2rem 1.5rem;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pupil {
+  background-color: black;
+  box-shadow: 0rem 0rem 0.1rem 0.3rem red;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 1rem;
+}
+
+.mouth {
+  height: 5rem;
+  width: 9rem;
+
+  border: 0.5rem black solid;
+  border-top: none;
+  border-radius: 0rem 0rem 7rem 7rem;
+  transform: rotate(45deg);
+  position: relative;
+  top: -0.1rem;
+  left: -1rem;
 }
