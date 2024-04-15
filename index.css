@@ -9,37 +9,19 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #ebf4ff;
+  gap: 1rem;
 }
-.side{
-  height: 10vh;
-  width: 10vh;
-  /* background-color: blue; */
-  border: 1px solid gray;
+.arrow{
+  width: 1rem;
+  height: 50vh;
+  /* background-color: rgb(212, 212, 212); */
+  box-shadow: 1px 1px 1px grey;
 }
-.a{
-  /* transform: rotate(30deg); */
+.head{
+  height: 1rem;
+  width: 1rem;
+  box-shadow: inherit;
+  transform: rotate(-135deg);
   position: relative;
-  top: 15.3vh;
-  left: -2.1vh;
-  border-right: none;
-  border-top: none;
-  border-bottom:none;
-}
-.b{
-  transform: rotate(45deg);
-}
-.c{
-  /* transform: rotate(30deg); */
-  position: relative;
-  top: -5.3vh;
-  left: 2.1vh;
-  border-left: none;
-  border-top: none;
-  border-bottom: none;
-  /* display: none; */
-}
-.d{
-  transform: rotate(45deg);
-  position: relative;
-  top: -10.5vh;
+  top: -3px;
 }
