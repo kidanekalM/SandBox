@@ -10,32 +10,30 @@ body {
   justify-content: center;
   background-color: #ebf4ff;
 }
-h1{
-  position: relative;
-  top: -5rem;
-}
-.container{
-}
-hr{
-  position: relative;
-  width: 10rem;
-}
-hr.top{
-  top: -3rem;
-}
 
-hr.l{
-  left: -8.5rem;
-  transform: rotate(-45deg);
+.card{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 1px grey;
+  border-radius: .5rem;
 }
-hr.r{
-  left: 9rem;
-  transform: rotate(45deg);
+img.profile{
+  height: 100px;
+  width: 170px;
+  border-radius: inherit;
 }
-hr.b{
-  top: 7rem;
-  transform: rotate(45deg);
+.caption{
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 9px;
+  /* box-shadow: 1px 1px 1px grey inset; */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-hr.bot{
-  top: 8rem;
+.title{
+  font-size: medium;
+  margin: 0%;
+}
+.desc{
+  width: 10rem;
 }
