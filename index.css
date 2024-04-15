@@ -17,7 +17,11 @@ body {
   box-shadow: 3px 3px 3px grey;
   border-radius: .5rem;
 }
+.card:hover img.profile{
+  display: block;
+}
 img.profile{
+  display: none;
   height: 100px;
   width: 170px;
   border-radius: inherit;
