@@ -14,7 +14,7 @@ body {
 .card{
   display: flex;
   flex-direction: column;
-  box-shadow: 1px 1px 1px grey;
+  box-shadow: 3px 3px 3px grey;
   border-radius: .5rem;
 }
 img.profile{
