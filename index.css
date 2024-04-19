@@ -1,7 +1,9 @@
 :root {
   --bodyCol: rgb(90, 2, 2);
 }
-
+*{
+  /* border: 1px solid gray; */
+}
 body {
   min-height: 90vh;
   display: flex;
@@ -11,17 +13,28 @@ body {
   background-color: #ebf4ff;
   gap: 1rem;
 }
-.arrow{
-  width: 1rem;
-  height: 50vh;
-  /* background-color: rgb(212, 212, 212); */
-  box-shadow: 1px 1px 1px grey;
+.cont{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 20vw;
+  width: 2vw;
+  box-shadow: 2px 2px 3px grey;
+  border-radius: 7px ;
+  transform: rotate(-40deg);
 }
-.head{
-  height: 1rem;
-  width: 1rem;
+.top{
+  height: 5vw;
+  width: 100%;
+  border-radius: inherit;
+  background-color: orange;
+
+}
+.bottom{
+  height: 2rem;
+  width: 2rem;
   box-shadow: inherit;
-  transform: rotate(-135deg);
-  position: relative;
-  top: -3px;
+  background-image: linear-gradient(rgb(39, 39, 39),grey);
+  border-radius: inherit;
 }
