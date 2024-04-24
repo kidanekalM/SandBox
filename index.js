@@ -1,8 +1,14 @@
-document.getElementById('time').addEventListener("keyup",(e)=>{
-    let time = parseFloat(document.getElementById('time').value)
-    if(time.toString() != "NaN"){
-        let amount =(time*360)/12
-        document.getElementById('arrow').style.transform = `rotate(${amount}deg)`
-        console.log(time)
-    }
+let tiles = document.getElementsByClassName('tile')
+
+console.log(tiles)
+for(i=0;i<tiles.length;i++){
+    tiles[i].addEventListener('click',(e)=>
+        e.target.innerHTML="<h1>X<h1>"
+    )
+}
+document.getElementById("clear").addEventListener('click',()=>{
+    for(i=0;i<tiles.length;i++){
+            tiles[i].innerHTML=""
+        
+    }   
 })
