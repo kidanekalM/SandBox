@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./Register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="formContainer">
+            <header class="formHeader">
+                <div class="tab selected "><h3>ግላዊ መረጃ</h3></div>
+                <div class="tab left1"><h3>የትምህርት </h3></div>
+                <div class="tab left2"><h3>አድራሻ መረጃ</h3></div>
+                <div class="tab left3"><h3>የስራ ጉዳይ </h3></div>
+                <div class="tab left4"><h3>ሌሎች</h3></div>
+            </header>
+            <Form  id="accordion" class="form" asp-controller="Student" asp-action="Create" enctype="multipart/form-data" method="post" >
+                <div class="card-body" id="ግላዊ መረጃ">
+                    <div class="form-group">
+                        <label asp-for="Id" for="id">መለያ:</label>
+                        <input asp-for="Id" type="text" class="form-control" id="id" name="id" required>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name" for="name">ስም:</label>
+                        <input asp-for="Name" type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ChristianName" for="christianName">የክርስትና ስም:</label>
+                        <input asp-for="ChristianName" type="text" class="form-control" id="christianName" name="christianName" required>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FatherName" for="fatherName">የአባት ስም:</label>
+                        <input asp-for="FatherName" type="text" class="form-control" id="fatherName" name="fatherName">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProfilePicture" for="profilePicture">ፕሮፋይል ምስል:</label>
+                        <input asp-for="ProfilePicture" type="file" class="form-control" id="profilePicture" name="profilePicture">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Birthdate" for="birthdate">የልደት ቀን:</label>
+                        <input asp-for="Birthdate" type="date" class="form-control" id="birthdate" name="birthdate" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="RegistrationDay" for="registrationDay">የመመዝገቢያ ቀን:</label>
+                        <input asp-for="RegistrationDay" type="date" id="registrationDay" name="registrationDay" required class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" for="gender">ጾታ:</label>
+                        <select asp-for="Gender" class="form-control" id="gender" name="gender">
+                            <option value="male">ወንድ</option>
+                            <option value="female">ሴት</option>
+                        </select>
+                    </div>
+                </div>
+<!-- Card next -->
+<div class="card-body" id="የትምህርት">
+    <div class="form-group">
+        <label asp-for="PreviousSundaySchool" for="previousSundaySchool">የቀዳሚ ሰንበት ቤት:</label>
+        <input asp-for="PreviousSundaySchool" type="text" class="form-control" id="previousSundaySchool" name="previousSundaySchool">
+    </div>
+    <div class="form-group">
+        <label asp-for="PreviousSundaySchoolStart" for="previousSundaySchoolStart">የቀዳሚ ሰንበት ትምህርት ቤት የጀመሩበት ቀን:</label>
+        <input asp-for="PreviousSundaySchoolStart" type="date" class="form-control" id="previousSundaySchoolStart" name="previousSundaySchoolStart">
+    </div>
+    <div class="form-group">
+        <label asp-for="PreviousSundaySchoolEnd" for="previousSundaySchoolEnd">የቀዳሚ ሰንበት ትምህርት ቤት የጨረሱበት ቀን:</label>
+        <input asp-for="PreviousSundaySchoolEnd" type="date" class="form-control" id="previousSundaySchoolEnd" name="previousSundaySchoolEnd">
+    </div>
+    <div class="form-group">
+        <label asp-for="HigherEducation" for="higherEducation">ከፍተኛ ትምህርት:</label>
+        <input asp-for="HigherEducation" type="checkbox" class="" id="higherEducation" name="higherEducation">
+    </div>
+    <div class="form-group">
+        <label asp-for="InstitutionName" for="institutionName"> የትምህርት ቤት:</label>
+        <input asp-for="InstitutionName" type="text" class="form-control" id="institutionName" name="institutionName">
+    </div>
+    <div class="form-group">
+        <label asp-for="HigherEducationStart" for="higherEducationStart">ከፍተኛ ትምህርት የጀመሩበት ቀን:</label>
+        <input asp-for="HigherEducationStart" type="date" class="form-control" id="higherEducationStart" name="higherEducationStart">
+    </div>
+    <div class="form-group">
+        <label asp-for="HigherEducationEnd" for="higherEducationEnd">ከፍተኛ ትምህርት የጨረሱበት ቀን:</label>
+        <input asp-for="HigherEducationEnd" type="date" class="form-control" id="higherEducationEnd" name="higherEducationEnd">
+    </div>
+    <div class="form-group">
+        <label asp-for="GraduatedIn" for="graduatedIn">ተማሪ የትምህርት ቤት አጀምሮ የጨረሱበት ቀን:</label>
+        <input asp-for="GraduatedIn" type="date" class="form-control" id="graduatedIn" name="graduatedIn">
+    </div>
+</div>
+<!-- Card next -->
+<div class="card-body" id="የስራ ጉዳይ">
+    <div class="form-group">
+        <label asp-for="City">ከተማ:</label>
+        <input type="text" class="form-control" asp-for="City" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="SubCity">ክፍለ ከተማ:</label>
+        <input type="text" class="form-control" asp-for="SubCity">
+    </div>
+    <div class="form-group">
+        <label asp-for="Kebele">ቀበሌ:</label>
+        <input type="text" class="form-control" asp-for="Kebele">
+    </div>
+    <div class="form-group">
+        <label asp-for="Woreda">ወረዳ:</label>
+        <input type="text" class="form-control" asp-for="Woreda">
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone">ስልክ ቁጥር:</label>
+        <input type="tel" class="form-control" asp-for="Phone">
+    </div>
+    <div class="form-group">
+        <label asp-for="PostalNumber">ፖስታ ቁጥር:</label>
+        <input type="text" class="form-control" asp-for="PostalNumber">
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">ኢሜል:</label>
+        <input type="email" class="form-control" asp-for="Email">
+    </div>
+</div>
+<!-- next Card  -->
+<div class="card-body"  id="አድራሻ መረጃ">
+    <div class="form-group">
+        <label asp-for="EmploymentType">የስራ አይነት:</label>
+        <input type="text" class="form-control" asp-for="EmploymentType">
+    </div>
+    <div class="form-group">
+        <label asp-for="CompanyName">የመስርያ ቤት ስም:</label>
+        <input type="text" class="form-control" asp-for="CompanyName">
+    </div>
+    <div class="form-group">
+        <label asp-for="CompanyAddress">የመስርያ ቤት አድራሻ:</label>
+        <input type="text" class="form-control" asp-for="CompanyAddress">
+    </div>
+    <div class="form-group">
+        <label asp-for="EducationLevel">የትምህርት ደረጃ:</label>
+        <input type="text" class="form-control" asp-for="EducationLevel">
+    </div>
+</div>
+<!-- Card next -->
+<div class="card-body" id="ሌሎች">
+    <div class="form-group ">
+        <label asp-for="MaritalStatus">ጋብቻ ሁኔታ:</label>
+        <input type="checkbox" name="" id="" asp-for="MaritalStatus">
+        <!-- <input type="checkbox"  > -->
+    </div>
+    <div class="form-group">
+        <label asp-for="LiveWith">የሚኖሩት:</label>
+        <input type="text" class="form-control" asp-for="LiveWith">
+    </div>
+    <div class="form-group">
+        <label asp-for="TalentsInterests">የተለየ ተሰጥኦ ፍላጎት:</label>
+        <input type="text" class="form-control" asp-for="TalentsInterests">
+    </div>
+    <div class="form-group">
+        <label asp-for="PreferredWorkArea">ሊያገለግሉበት የሚፈልጉት ኪፍል:</label>
+        <input type="text" class="form-control" asp-for="PreferredWorkArea">
+    </div>
+    <div class="form-group">
+        <label asp-for="EmergencyContactName">የኣደጋ ግዜ ተጠሪ (1):</label>
+        <input type="text" class="form-control" asp-for="EmergencyContactName">
+    </div>
+    <div class="form-group">
+        <label asp-for="EmergencyContactPhone">ስልክ ቁጥር (1):</label>
+        <input type="tel" class="form-control" asp-for="EmergencyContactPhone">
+    </div>
+</div>
+
+<div class="d-flex w-100 align-items-cemter p-1 justify-content-between">
+
+    <button type="" id="back" class="btn btn-secondary w-25">ቀዳሚ</button>
+    <button type="submit" id="next" class="btn btn-primary w-25">ቀጣይ </button>
+</div>
+
+            </Form>
+        </div>
+    </div>
+</body>
+<script src="./Register.js"></script>
+</html>
