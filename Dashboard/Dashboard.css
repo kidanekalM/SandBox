@@ -1,0 +1,19 @@
+*{
+    border: 1px solid red;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+}
+aside{
+    height: 100%;
+    width: 20%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+aside .menuItem{
+    display: flex;
+    align-items: center;
+    background-color: blue;
+}
