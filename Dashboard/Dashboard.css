@@ -1,9 +1,12 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 .wrapper{
     display: flex;
     align-items: center;
+    height: 100vh;
 }
 aside{
     height: 100%;
@@ -11,12 +14,18 @@ aside{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background-color: blue;
+    padding: 1rem;
 }
 aside .menuItem{
     font-size: xx-large;
     align-items: center;
-    background-color: blue;
+    background-color: white;
     border-radius: 10rem;
     padding-left: 1rem ;
-    color: whitesmoke;
+    color: blue;
+    box-shadow: 1px 1px 1px grey;
+}
+aside .menuItem:hover{
+    background-color: lightblue;
 }
