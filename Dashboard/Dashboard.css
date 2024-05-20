@@ -32,16 +32,36 @@ aside .menuItem:hover{
 .content{
     height: 100vh;
     width: 90vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    gap: 1rem;
+    background-color: rgb(213, 244, 255);
+    grid-template-areas:'b b t'
+                        'i h t'
+                        'e e c' ;
+    padding: .5rem;
+}
+.content>.item{
+    border-radius: 2rem;
+    box-shadow: 1px 1px 2px grey;
+    background-color: white;
 }
 .banner{
-    height: 20%;
-    width: 60%;
-    background-color: lightblue;
-    margin: .5rem;
-    border-radius: 2rem;
-    box-shadow: 1px 1px 1px grey;
+    grid-area: b;
+}
+.transactions{
+    grid-area: t;
 
+}
+.expenses{
+    grid-area: e;
+
+}
+.hierarchy{
+    grid-area: h;
+}
+.inventory{
+    grid-area: i;
+}
+.communcication{
+    grid-area: c;
 }
