@@ -36,11 +36,13 @@ aside .menuItem:hover{
     display: grid;
     gap: 1rem;
     background-color: rgb(213, 244, 255);
-    grid-template-areas:'h b t'
+    grid-template-areas:
+                    /* 'hdr hdr hdr' */
                         'b b t'
                         'i h t'
                         'e e c' ;
-    padding: .5rem;
+    /* grid-template-rows: 9% 28% 28% 28%; */
+    padding: 1rem;
 }
 .content>.item{
     border-radius: 2rem;
@@ -48,7 +50,7 @@ aside .menuItem:hover{
     background-color: white;
 }
 header.header{
-    grid-area: h;
+    grid-area: hdr;
 }
 .banner{
     grid-area: b;
