@@ -17,14 +17,20 @@ aside{
     background-color: blue;
     padding: 5rem 1rem 1rem 1rem;
 }
-aside .menuItem{
-    font-size: xx-large;
+aside .menuItem.selected{
     align-items: center;
     background-color: white;
-    border-radius: 10rem;
-    padding-left: 1rem ;
     color: blue;
     box-shadow: 1px 1px 1px grey;
+}
+aside .menuItem{
+    font-size: xx-large;
+    border-radius: 10rem;
+    padding-left: 1rem ;
+    color: white;
+    background-color: blue;
+    box-shadow: none;
+
 }
 aside .menuItem:hover{
     background-color: lightblue;
