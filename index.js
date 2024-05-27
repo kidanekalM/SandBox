@@ -1,12 +1,13 @@
 let tiles = document.getElementsByClassName('tile')
-
+let clicked = []
 console.log(tiles)
 for(i=0;i<tiles.length;i++){
   console.log(tiles[i].id)
-    tiles[i].innerHTML = tiles[i].id
     tiles[i].addEventListener('click',(e)=>
        {
-        if(e.target.innerHTML == ""){
+         console.log(clicked)
+         if(e.target.innerHTML == ""){
+          clicked[clicked.length] = e.target
           e.target.innerHTML="<h1>X<h1>"
           let classN =e.target.className; 
           e.target.className =classN+" X"; 
