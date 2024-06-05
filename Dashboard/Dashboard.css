@@ -89,8 +89,12 @@ header.header{
     display: flex;
     gap: .5rem;
     box-shadow: inherit;
+    align-items: center;
+    justify-content: space-between;
 }
 .userContainer img{
+    height: 60px;
+    width: 60px;
     border-radius: inherit;
     background-color: grey;
 }
