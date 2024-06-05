@@ -71,6 +71,10 @@ header.header{
 }
 .hierarchy{
     grid-area: h;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .inventory{
     grid-area: i;
@@ -79,7 +83,7 @@ header.header{
     grid-area: c;
 }
 .userContainer{
-    height: 90%;
+    height: 40%;
     width: 90%;
     border-radius: inherit;
     display: flex;
