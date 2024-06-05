@@ -84,5 +84,9 @@ header.header{
     border-radius: inherit;
     display: flex;
     gap: .5rem;
-    
+    box-shadow: inherit;
+}
+.userContainer img{
+    border-radius: inherit;
+    background-color: grey;
 }
