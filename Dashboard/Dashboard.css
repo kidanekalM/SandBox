@@ -83,13 +83,13 @@ header.header{
     grid-area: c;
 }
 .userContainer{
-    height: 40%;
+    height: 30%;
     width: 90%;
     border-radius: inherit;
     display: flex;
     gap: .5rem;
     box-shadow: inherit;
-    align-items: center;
+    align-items:stretch;
     justify-content: space-between;
 }
 .userContainer img{
