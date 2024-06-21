@@ -3,6 +3,37 @@
     margin: 0;
     padding: 0;
 }
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.codeWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+#txtCode{
+    height : 75vh;
+    width: 25vw;
+    border-radius: 1rem;
+    font-size: large;
+}
+.btn{
+    font-size: 2rem;
+    border: none;
+    background-color: green;
+    color: wheat;
+    padding: 2px 2rem;
+    border-radius: 10rem;
+    box-shadow: 1px 1px 1px grey;
+}
+.btn:active{
+    box-shadow: 1px 1px 1px grey inset;
+}
+.btnCont{
+    display: flex;
+}
 .wrapper{
     display: flex;
     flex-direction: column;
