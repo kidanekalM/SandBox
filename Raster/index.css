@@ -51,3 +51,6 @@
     width: 3vh;
     border: 1px solid rgb(187, 187, 187);
 }
+.pixel.set{
+    background-color: rgb(56, 255, 56);
+}
