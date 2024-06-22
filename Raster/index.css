@@ -15,12 +15,13 @@
 }
 #txtCode{
     height : 75vh;
-    width: 25vw;
+    width: 40vw;
     border-radius: 1rem;
     font-size: large;
+    padding: 1rem;
 }
 .btn{
-    font-size: 2rem;
+    font-size: 1.5rem;
     border: none;
     background-color: green;
     color: wheat;
@@ -49,7 +50,8 @@
 .pixel{
     height: 3vh;
     width: 3vh;
-    border: 1px solid rgb(187, 187, 187);
+    border: 1px solid rgb(240, 240, 240);
+    background-color: rgb(132, 237, 255);
 }
 .pixel.set{
     background-color: rgb(56, 255, 56);

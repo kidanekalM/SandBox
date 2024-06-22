@@ -15,9 +15,26 @@ for(i=0;i<numRow;i++){
 }
 // we reverse the array to resemble the cartesian plane
 pixels = pixels.reverse()
-
-pixels[7][9].className += ' set'
+function setPixel(x,y){
+    pixels[y][x].className += ' set' 
+}
 
 document.getElementById("run").addEventListener('click',(e)=>{
-    console.log(document.getElementById("txtCode").value)
+    let code = document.getElementById("txtCode").value
+    // console.log(code);
+    // code.forEach(c => {
+    //     c = c.toString()
+    //     console.log(c)
+    //     if((c).includes("setPixel")){
+    //         let y = ((c).substring(c.indexOf('(')+1,c.indexOf(',')))
+    //         let x = ((c).substring(c.indexOf(',')+1,c.indexOf(')')))
+            
+    //         pixels[x][y].className += ' set'
+    //     }
+    //     else{
+    //         console.log(false,"not Found")
+    //     }
+    // })
+    eval(code)
+
 })
