@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+
+}
+
+input{
+    border: none;
+    box-shadow: 1px 1px 1px 1px grey;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+input[type='submit']{
+    background-color: green;
+    color: white;
+    width: 8rem;
+ 
+    
+}
+input[type='submit']:hover {
+ position:relative;
+ background-color:aqua;
+ animation-name: mov;
+ animation-duration: .5s;
+ /* animation-iteration-count: 1; */
+ /* display: ; */
+}
+@keyframes explode {
+    from{
+        
+    }
+}
+@keyframes move {
+    from{
+        
+        transform: translate(1px, 10px);
+    }
+    to{
+        transform: translate(100px, 10px);
+    }   
+}
+input[type='reset']{
+    background-color: red;
+    color: white;
+    width: 5rem;
+}
+
+.fnameinp{
+    background-color: green;
+}
+
+.lnameinp{
+    background-color: yellow;
+}
+
+.emailinp{
+    background-color: red;
+}
