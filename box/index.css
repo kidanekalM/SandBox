@@ -18,4 +18,19 @@
     border-radius: 20px;
     height: 7rem;
     width: 15rem;
+    box-shadow: 1px 1px 1px gray;
+    border: none;
+}
+.box:nth-child(1){
+    border-color: greenyellow;
+}
+.box:nth-child(2){
+    border-color: aqua;
+}
+.box:nth-child(3){
+    border-color: rgb(255, 136, 0);
+}
+.box:hover{
+    background-color: aliceblue;
+    /* scale: calc(8/7); */
 }
