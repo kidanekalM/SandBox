@@ -8,18 +8,19 @@
     width: 100vw;
     display: flex;
     flex-direction: row;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 5%;
+    padding: calc(100vw*0.05);
     justify-content: center;
     flex-wrap: wrap;
 }
 .box{
     border: 3px solid black;
-    border-radius: 20px;
+    border-radius: 200px;
     height: 7rem;
-    width: 15rem;
+    width: calc((100% - 18%)/3);
     box-shadow: 1px 1px 1px gray;
     border: none;
+    background-color: rgb(255, 115, 0);
 }
 .box:nth-child(1){
     border-color: greenyellow;
@@ -31,6 +32,6 @@
     border-color: rgb(255, 136, 0);
 }
 .box:hover{
-    background-color: aliceblue;
+    background-image: linear-gradient(rgb(0, 4, 255),yellow);
     /* scale: calc(8/7); */
 }
