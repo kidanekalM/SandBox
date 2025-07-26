@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+.wrapper{
+    background-color: rgb(52, 37, 121);
+    background-image: linear-gradient(black,darkred);
+    height: 100vh;
+}
+header{
+    width: 100%;
+    /* height: 10%; */
+    background-color: rgb(77, 3, 3);
+    color: rgb(236, 236, 236);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:fantasy;
+}
+h1{
+    font-size: 2rem;
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 92vh;
+}
+.chat{
+    background-color: rgb(37, 37, 37);
+    height: max-content;
+    min-height: 3rem;
+    width: 20rem;
+    box-shadow: 1px 1px 1px rgb(36, 36, 36);
+    border-radius: 1rem 1rem .1rem 1rem;
+    color: rgb(0, 255, 0);
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: .3rem;
+}
+
+.chatCont{
+    margin: 1rem;
+}
+.chatCont:nth-child(odd){
+    border-radius: 1rem 1rem .1rem 1rem;
+    align-self: flex-end;
+
+}
+.msgbar{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 16rem;
+   margin-top: 3rem;
+}
+
+.ps{
+    font-size: .91rem;
+    color: white;
+}
