@@ -1,0 +1,40 @@
+/* overlapping barchart */
+.body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 1rem;
+}
+.bar{
+    height: 10rem;
+    width: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(185, 207, 255);
+    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.inner{
+    height: 80%;
+    width: .7rem;
+    border-radius: 1rem;
+    background-color: rgb(1, 75, 248);
+    /* box-shadow: 1px 1px 1px 1px gray; */
+    border-radius: 10px;
+
+}
+#below{
+    height: 6rem;
+}
+#above{
+    height: 140%;
+}
