@@ -75,7 +75,7 @@
 
     <div class="form-group">
       <label for="ref">Escrow Reference</label>
-      <input type="text" id="ref" value="ESCROW-HAF-TEST-001" readonly>
+      <input type="text" id="ref" value="ESCROW-HAF-TEST-0101" readonly>
       <small>Auto-generated for testing</small>
     </div>
 
@@ -107,71 +107,67 @@
       OTP: <code>123456</code></p>
     </div>
   </div>
-
+  
   <script>
-    // Chapa sandbox public key (safe to expose)
-    const CHAPA_PUBLIC_KEY = "CHAPUBK_TEST-Eb40mkJtp3wNWXGQeeA0fZ8WXeyIWql4"; // ← REPLACE with your Chapa test key
+async function initCheckout() {
+  const amount = document.getElementById('amount').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const txRef = document.getElementById('ref').value;
+  const method = document.querySelector('input[name="method"]:checked').value;
 
-    function initCheckout() {
-      const amount = document.getElementById('amount').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const txRef = document.getElementById('ref').value;
-      const method = document.querySelector('input[name="method"]:checked').value;
+  if (!amount || !email || !phone) {
+    alert("Please fill all fields");
+    return;
+  }
 
-      if (!amount || !email || !phone) {
-        alert("Please fill all fields");
-        return;
-      }
-
-      // Build payload
-      const payload = {
-        key: CHAPA_PUBLIC_KEY,
-        email: email,
-        amount: amount,
-        first_name: "Test",
-        last_name: "User",
-        tx_ref: txRef,
-        currency: "ETB",
-        callback_url: "https://example.et/success", // ← change to your success page
-        return_url: "https://example.et/return",   // ← change to your return page
-        customization: {
-          title: " Escrow Hold",
-          description: "Funds held until milestone approval"
-        }
-      };
-
-      // Add payment method
-      if (method === 'ethiopay') {
-        payload.payment_options = "ethiopay";
-        payload.authorization = {
-          type: "pre_auth",
-          validity_days: 14
-        };
-      } else if (method === 'bank_collection') {
-        payload.payment_method = "bank_collection";
-      } else {
-        payload.payment_options = "telebirr";
-      }
-
-      // Initialize Chapa checkout
-      $.ajax({
-        url: "https://api.chapa.co/v1/transaction/initialize",
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        data: JSON.stringify(payload),
-        success: function(response) {
-          if (response.data && response.data.checkout_url) {
-            window.location = response.data.checkout_url;
-          } else {
-            alert("Checkout failed: " + JSON.stringify(response));
-          }
-        },
-        error: function(xhr) {
-          alert("Error: " + xhr.responseText);
-        }
-      });
+  const payload = {
+    amount: amount,
+    currency: "ETB",
+    email: email,
+    first_name: "Test",
+    last_name: "User",
+    tx_ref: txRef,
+    callback_url: "https://example.et/success",
+    return_url: "",
+    customization: {
+      title: "HaFCoM Escrow",
+      description: "Funds held until approval"
     }
-  </script>
+  };
+
+  // Add payment method
+  if (method === 'ethiopay') {
+    payload.payment_options = "ethiopay_card";
+    payload.authorization = {
+      type: "pre_auth",
+      validity_days: 14
+    };
+  } else if (method === 'bank_collection') {
+    payload.payment_method = "bank_collection";
+  } else {
+    payload.payment_options = "telebirr";
+  }
+
+  try {
+    // ✅ Call YOUR proxy (not Chapa directly)
+    const response = await fetch('http://localhost:3000/chapa/init', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    
+    const data = await response.json();
+    
+    if (data.checkout_url) {
+      window.location = data.checkout_url; // ← Chapa's official URL!
+    } else {
+      alert("Error: " + JSON.stringify(data));
+    }
+  } catch (err) {
+    alert("Network error: " + err.message);
+  }
+}
+</script>
 </body>
 </html>
