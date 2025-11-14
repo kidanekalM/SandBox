@@ -17,8 +17,9 @@
     width: 1rem;
     border-radius: 1rem;
     background-color: rgb(185, 207, 255);
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 1px 1px 1px rgb(191, 225, 255);
     border-radius: 10px;
+    border:1px solid rgb(178, 178, 255);
     display: flex;
     justify-content: center;
     align-items: end;
