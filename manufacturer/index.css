@@ -13,9 +13,11 @@
 }
 .circlecont{
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: calc(var(--capheight)*6);
     width: calc(var(--capheight)*6);
-    animation-name: 'rotate';
+    /* animation-name: 'rotate'; */
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
@@ -27,6 +29,9 @@
     justify-content: end;
     /* border: 1px solid red; */
     position: absolute;
+    /* animation-name: movein; */
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
 .cap{
     display: flex;
@@ -62,4 +67,14 @@
         to {
             transform: rotate(360deg);
         }
+}
+@keyframes movein {
+    from {
+        position: absolute;
+        left: -15rem;
+    }
+    to {
+        position: absolute;
+        left: 0rem;
+    }
 }
