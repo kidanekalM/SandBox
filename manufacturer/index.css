@@ -1,7 +1,32 @@
+
+*{
+    --capwidth:1rem;
+    --capheight:calc(var(--capwidth)*3/2);
+}
 .container{
    display: flex;
    align-items: center;
    justify-content: center; 
+   gap: 1rem;
+   flex-direction: column;
+   --asdf:123;
+}
+.circlecont{
+    display: flex;
+    height: calc(var(--capheight)*6);
+    width: calc(var(--capheight)*6);
+    /* animation-name: 'rotate'; */
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.capcont{
+    display: flex;
+    height: calc(var(--capheight)*6);
+    width: calc(var(--capheight)*6);
+    align-items: end;
+    justify-content: end;
+    /* border: 1px solid red; */
+    position: absolute;
 }
 .cap{
     display: flex;
@@ -9,23 +34,22 @@
     align-items: center;
     justify-content: center;
     /* border: 1px solid blue; */
-    animation-name: 'rotate';
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
+    height: (var(--capheight)*2);
+    transform: rotate(33deg);
 }
 .top{
     border: 2px solid rgb(55, 55, 55);
     background-color: rgb(0, 153, 255);
-    height: 3rem;
+    height: calc(var(--capwidth)*3/2);
     border-radius: 2rem 2rem 0 0;
-    width: 2rem;
+    width: var(--capwidth);
     box-shadow: 0px 1px 1px gray;
 }
 .bot{
     border: 2px solid rgb(55,55,55);
     background-color: rgb(255, 42, 42);
-    width:2rem;
-    height:3rem;
+    width:var(--capwidth);
+    height:calc(var(--capwidth)*3/2);
     border-radius: 0 0 2rem 2rem;
     box-shadow: 0px 1px 1px gray;
 
