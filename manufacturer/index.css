@@ -1,6 +1,6 @@
 
 *{
-    --capwidth:1rem;
+    --capwidth:0.5rem;
     --capheight:calc(var(--capwidth)*3/2);
 }
 .container{
@@ -15,7 +15,7 @@
     display: flex;
     height: calc(var(--capheight)*6);
     width: calc(var(--capheight)*6);
-    /* animation-name: 'rotate'; */
+    animation-name: 'rotate';
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
