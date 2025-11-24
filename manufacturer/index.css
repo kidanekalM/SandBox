@@ -11,6 +11,7 @@
    gap: 1rem;
    flex-direction: column;
    --asdf:123;
+   height: 100vh;
 }
 .circlecont{
     position: relative;
