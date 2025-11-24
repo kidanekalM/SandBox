@@ -1,7 +1,8 @@
 
 *{
-    --capwidth:0.5rem;
+    --capwidth:2.5rem;
     --capheight:calc(var(--capwidth)*3/2);
+
 }
 .container{
    display: flex;
@@ -12,26 +13,37 @@
    --asdf:123;
 }
 .circlecont{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: calc(var(--capheight)*6);
     width: calc(var(--capheight)*6);
-    /* animation-name: 'rotate'; */
-    animation-duration: 2s;
+    animation-name: rotate;
+    animation-duration: 12s;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 .capcont{
-    display: flex;
-    height: calc(var(--capheight)*6);
-    width: calc(var(--capheight)*6);
-    align-items: end;
-    justify-content: end;
-    /* border: 1px solid red; */
     position: absolute;
-    /* animation-name: movein; */
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transform-origin: center center;
+}
+.capcont.last{
+    height: auto;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 .cap{
     display: flex;
@@ -39,25 +51,56 @@
     align-items: center;
     justify-content: center;
     /* border: 1px solid blue; */
-    height: (var(--capheight)*2);
+    height: calc(var(--capheight)*2);
     transform: rotate(33deg);
 }
 .top{
     border: 2px solid rgb(55, 55, 55);
     background-color: rgb(0, 153, 255);
-    height: calc(var(--capwidth)*3/2);
+    background-image: radial-gradient(circle at top,rgb(135, 171, 255),blue);
     border-radius: 2rem 2rem 0 0;
+    height: calc(var(--capwidth)*3/2);
     width: var(--capwidth);
     box-shadow: 0px 1px 1px gray;
 }
 .bot{
     border: 2px solid rgb(55,55,55);
-    background-color: rgb(255, 42, 42);
+    background-image: radial-gradient(circle at bottom,rgb(255, 147, 147),rgb(255, 0, 0));
+
     width:var(--capwidth);
     height:calc(var(--capwidth)*3/2);
     border-radius: 0 0 2rem 2rem;
     box-shadow: 0px 1px 1px gray;
+}
+.capcont.last .cap{
+    animation-name: ship;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
+.capcont.last .topcont{
+    animation-name: cover;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    height: calc((var(--capwidth)*3/2)*2);
+    width: calc(var(--capwidth)*2);
+}
+.capcont.last .botcont{
+    animation-name: cover;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    position: absolute;
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    height: calc((var(--capwidth)*3/2)*2);
+    width: calc(var(--capwidth)*2);
 }
 @keyframes rotate {
         from {
@@ -68,13 +111,42 @@
             transform: rotate(360deg);
         }
 }
+
+
 @keyframes movein {
     from {
         position: absolute;
         left: -15rem;
+    height: calc((var(--capwidth)*3/2)*2);
+    width: calc(var(--capwidth)*2);
     }
     to {
         position: absolute;
         left: 0rem;
+        height: calc((var(--capwidth)*3/2)*2);
+        width: calc(var(--capwidth)*2);
+    }
+}
+
+@keyframes cover {
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes ship {
+    0% {
+        transform: rotate(33deg) translateY(0) scale(1);
+    }
+    70% {
+        transform: rotate(33deg) translateY(1rem) scale(0.8);
+    }
+    100% {
+        transform: rotate(33deg) translateY(3rem) scale(0.5);
     }
 }
