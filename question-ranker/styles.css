@@ -1,0 +1,339 @@
+:root {
+  --bg: #f6efe4;
+  --panel: rgba(255, 250, 241, 0.92);
+  --panel-strong: #fffaf1;
+  --text: #1d1a16;
+  --muted: #665f57;
+  --line: #d6cabd;
+  --accent: #c45c2f;
+  --accent-strong: #8f3f1d;
+  --accent-soft: #f2dcc7;
+  --danger: #8c2f39;
+  --shadow: 0 16px 40px rgba(68, 44, 22, 0.12);
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(196, 92, 47, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(69, 110, 92, 0.14), transparent 26%),
+    linear-gradient(180deg, #fdf8f1 0%, var(--bg) 100%);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  padding: 24px;
+}
+
+.sidebar,
+.panel,
+.hero,
+.question-card {
+  border: 1px solid rgba(120, 97, 76, 0.16);
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+
+.sidebar {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  border-radius: 28px;
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.panel,
+.hero {
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.main-content {
+  display: grid;
+  gap: 20px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(196, 92, 47, 0.12), rgba(255, 250, 241, 0.9)),
+    var(--panel-strong);
+}
+
+.eyebrow,
+.tiny,
+.question-section,
+.question-meta,
+.round-meta,
+.stat-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.eyebrow,
+.question-section {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.55rem;
+}
+
+.muted,
+.question-meta,
+.round-meta,
+.tiny,
+.stat-label {
+  color: var(--muted);
+}
+
+.panel-header,
+.action-row,
+.question-card-top,
+.score-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.round-list,
+.question-list {
+  display: grid;
+  gap: 12px;
+}
+
+.round-item,
+button,
+select,
+input[type="text"],
+input[type="number"] {
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff8f1;
+  border: none;
+  padding: 10px 14px;
+  transition: transform 140ms ease, background-color 140ms ease, opacity 140ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: var(--accent-strong);
+}
+
+.ghost-button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.ghost-button:hover {
+  background: rgba(29, 26, 22, 0.06);
+}
+
+.ghost-button.danger {
+  color: var(--danger);
+}
+
+.round-item {
+  width: 100%;
+  text-align: left;
+  background: rgba(255, 250, 241, 0.8);
+  padding: 14px;
+  display: grid;
+  gap: 4px;
+}
+
+.round-item.active {
+  border-color: rgba(196, 92, 47, 0.7);
+  background: linear-gradient(135deg, rgba(196, 92, 47, 0.18), rgba(255, 250, 241, 0.96));
+}
+
+.round-name {
+  font-weight: 700;
+}
+
+.stats-grid,
+.shortlist-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stat-card {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.54);
+  border: 1px solid rgba(120, 97, 76, 0.12);
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.8rem;
+}
+
+.controls,
+.shortlist-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.controls {
+  display: grid;
+  gap: 16px;
+}
+
+.control-block {
+  display: grid;
+  gap: 8px;
+}
+
+.checkbox-block {
+  align-content: end;
+}
+
+select,
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.question-list {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.question-card {
+  border-radius: 24px;
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+  animation: lift-in 260ms ease;
+}
+
+.question-title {
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.question-score-pill {
+  min-width: 54px;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.question-options {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  display: grid;
+  gap: 4px;
+}
+
+.score-label {
+  display: grid;
+  gap: 10px;
+}
+
+.score-input {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.score-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.score-buttons button {
+  min-width: 40px;
+  padding: 8px 10px;
+}
+
+.score-value {
+  font-size: 1.25rem;
+}
+
+.empty-state {
+  padding: 28px;
+  border-radius: 22px;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+@keyframes lift-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1080px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .hero,
+  .controls,
+  .shortlist-grid {
+    grid-template-columns: 1fr;
+  }
+}

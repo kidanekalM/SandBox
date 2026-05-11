@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Question Ranker</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Iterative ranking</p>
+          <h1>Question Ranker</h1>
+          <p class="muted">
+            Score the full questionnaire, create a shortlist, then re-score each derived list until you reach the best set.
+          </p>
+        </div>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Dataset</h2>
+            <button id="reload-data" class="ghost-button" type="button">Reload</button>
+          </div>
+          <p id="dataset-meta" class="muted"></p>
+          <p class="tiny">
+            Local data file: <code>data/questions.local.json</code>
+          </p>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Lists</h2>
+            <button id="reset-state" class="ghost-button danger" type="button">Reset</button>
+          </div>
+          <div id="round-list" class="round-list"></div>
+        </section>
+      </aside>
+
+      <main class="main-content">
+        <section class="hero">
+          <div>
+            <p class="eyebrow">Current list</p>
+            <h2 id="active-round-name">Loading...</h2>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-label">Questions</span>
+              <strong id="question-count">0</strong>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Rated</span>
+              <strong id="rated-count">0</strong>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Average</span>
+              <strong id="average-score">0.0</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel controls">
+          <div class="control-block">
+            <label for="sort-mode">Sort</label>
+            <select id="sort-mode">
+              <option value="score-desc">Highest score first</option>
+              <option value="score-asc">Lowest score first</option>
+              <option value="original">Original order</option>
+              <option value="section">Section</option>
+            </select>
+          </div>
+          <div class="control-block checkbox-block">
+            <label>
+              <input id="unrated-only" type="checkbox" />
+              Show unrated only
+            </label>
+          </div>
+          <div class="control-block">
+            <label for="score-default">Default score step</label>
+            <select id="score-default">
+              <option value="0">0 to 5</option>
+              <option value="1">1 to 5</option>
+            </select>
+          </div>
+          <div class="action-row">
+            <button id="export-round" type="button">Export list JSON</button>
+            <button id="clear-round-scores" class="ghost-button" type="button">Clear scores</button>
+          </div>
+        </section>
+
+        <section class="panel shortlist-builder">
+          <div class="panel-header">
+            <h2>Create next shortlist</h2>
+            <p class="muted">Filter this list into a new list, then score that new list again.</p>
+          </div>
+          <div class="shortlist-grid">
+            <div class="control-block">
+              <label for="shortlist-name">New list name</label>
+              <input id="shortlist-name" type="text" placeholder="Example: Round 2 shortlist" />
+            </div>
+            <div class="control-block">
+              <label for="threshold-score">Minimum score</label>
+              <input id="threshold-score" type="number" min="0" max="5" step="1" value="4" />
+            </div>
+            <div class="control-block">
+              <label for="top-limit">Top N limit</label>
+              <input id="top-limit" type="number" min="1" step="1" placeholder="Optional" />
+            </div>
+            <div class="action-row">
+              <button id="create-shortlist" type="button">Create shortlist</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="question-list" class="question-list"></section>
+      </main>
+    </div>
+
+    <template id="round-template">
+      <button class="round-item" type="button">
+        <span class="round-name"></span>
+        <span class="round-meta"></span>
+      </button>
+    </template>
+
+    <template id="question-template">
+      <article class="question-card">
+        <div class="question-card-top">
+          <div>
+            <p class="question-section"></p>
+            <h3 class="question-title"></h3>
+          </div>
+          <div class="question-score-pill"></div>
+        </div>
+        <p class="question-meta"></p>
+        <ul class="question-options"></ul>
+        <label class="score-label">
+          <span>Score</span>
+          <input class="score-input" type="range" min="0" max="5" step="1" value="0" />
+        </label>
+        <div class="score-actions">
+          <div class="score-buttons">
+            <button data-score="0" type="button">0</button>
+            <button data-score="1" type="button">1</button>
+            <button data-score="2" type="button">2</button>
+            <button data-score="3" type="button">3</button>
+            <button data-score="4" type="button">4</button>
+            <button data-score="5" type="button">5</button>
+          </div>
+          <strong class="score-value"></strong>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

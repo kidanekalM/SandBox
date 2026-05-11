@@ -1,3 +1,6 @@
 node_modules
 node modules
 build
+__pycache__/
+question-ranker/data/questions.local.json
+question-ranker/data/*.export.json

@@ -1,0 +1,31 @@
+{
+  "title": "Question Ranker Sample Dataset",
+  "source": "Template fallback dataset",
+  "questions": [
+    {
+      "id": "sample-1",
+      "code": "Q1",
+      "section": "Sample",
+      "text": "Does this question belong in your shortlist?",
+      "type": "Short answer",
+      "required": true,
+      "options": [],
+      "note": "Replace this by generating data/questions.local.json from your PDF.",
+      "order": 1
+    },
+    {
+      "id": "sample-2",
+      "code": "Q2",
+      "section": "Sample",
+      "text": "Would you rate this highly for the final set?",
+      "type": "Multiple choice",
+      "required": false,
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "note": "",
+      "order": 2
+    }
+  ]
+}
