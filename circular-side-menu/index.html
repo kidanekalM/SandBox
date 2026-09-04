@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Orbit Menu Reference Template</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <input class="menu-toggle" type="radio" name="menu" id="menu-home" />
+      <input class="menu-toggle" type="radio" name="menu" id="menu-services" />
+      <input class="menu-toggle" type="radio" name="menu" id="menu-orders" />
+      <input class="menu-toggle" type="radio" name="menu" id="menu-gallery" />
+      <input class="menu-toggle" type="radio" name="menu" id="menu-profile" />
+
+      <div class="app-frame">
+        <header class="top-nav" aria-label="Primary navigation">
+          <div class="brand-badge" aria-hidden="true">LOGO</div>
+          <label class="top-link" for="menu-home">
+            <span class="nav-icon">HM</span>
+            <span>Home</span>
+          </label>
+          <label class="top-link" for="menu-services">
+            <span class="nav-icon">PS</span>
+            <span>Products &amp; Services</span>
+          </label>
+          <label class="top-link" for="menu-gallery">
+            <span class="nav-icon">PW</span>
+            <span>Previous Works</span>
+          </label>
+          <label class="top-link" for="menu-profile">
+            <span class="nav-icon">CU</span>
+            <span>Contact us</span>
+          </label>
+        </header>
+
+        <section class="stage">
+          <aside class="orbit-wrap" aria-label="Circular section menu">
+            <div class="orbit-ring" aria-hidden="true"></div>
+            <div class="orbit-core" aria-hidden="true">
+              <span>SELECT</span>
+              <strong>SECTION</strong>
+            </div>
+
+            <label class="orbit-node node-services" for="menu-services" data-menu="services" data-angle="0">
+              <span class="node-photo photo-services"></span>
+              <span class="node-title">Manage Services</span>
+            </label>
+
+            <label class="orbit-node node-orders" for="menu-orders" data-menu="orders" data-angle="72">
+              <span class="node-photo photo-orders"></span>
+              <span class="node-title">Manage Orders</span>
+            </label>
+
+            <label class="orbit-node node-gallery" for="menu-gallery" data-menu="gallery" data-angle="144">
+              <span class="node-photo photo-gallery"></span>
+              <span class="node-title">Manage Gallery</span>
+            </label>
+
+            <label class="orbit-node node-products" for="menu-home" data-menu="home" data-angle="216">
+              <span class="node-photo photo-products"></span>
+              <span class="node-title">Manage Products</span>
+            </label>
+
+            <label class="orbit-node node-profile" for="menu-profile" data-menu="profile" data-angle="288">
+              <span class="node-photo photo-profile logo-node">LOGO</span>
+              <span class="node-title">Manage Profile</span>
+            </label>
+          </aside>
+
+          <main class="detail-pane">
+            <p class="selection-kicker">Selected workspace</p>
+            <section class="idle-card" aria-hidden="true">
+              <span>Start here</span>
+              <h1>Choose a section from the orbit</h1>
+              <p>The wheel will rotate clockwise and dock to the left, keeping your selected workspace in view.</p>
+            </section>
+            <section class="detail-card card-home">
+              <h1>Home</h1>
+              <p>
+                The orbit can sit at the center when idle, then slide into the side once a section is chosen.
+              </p>
+            </section>
+
+            <section class="detail-card card-services">
+              <h1>Products &amp; Services</h1>
+              <div class="form-panel">
+                <div class="field-row">
+                  <span class="field-label">Category</span>
+                  <span class="field-value">Large format printing</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Items</span>
+                  <span class="field-value">Banners, stickers, signage</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Status</span>
+                  <span class="field-value">Active portfolio</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="detail-card card-orders">
+              <h1>Manage Orders</h1>
+              <div class="form-panel">
+                <div class="field-row">
+                  <span class="field-label">Current queue</span>
+                  <span class="field-value">12 open orders</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Priority jobs</span>
+                  <span class="field-value">3 awaiting delivery</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Assigned team</span>
+                  <span class="field-value">Production desk A</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="detail-card card-gallery">
+              <h1>Previous Works</h1>
+              <div class="form-panel">
+                <div class="field-row">
+                  <span class="field-label">Albums</span>
+                  <span class="field-value">Interior, branding, events</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Featured</span>
+                  <span class="field-value">Resort wayfinding project</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Visibility</span>
+                  <span class="field-value">Public showcase</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="detail-card card-profile">
+              <h1>Manage Profile</h1>
+              <div class="form-panel">
+                <div class="field-row">
+                  <span class="field-label">Logo</span>
+                  <span class="field-value logo-field">LOGO</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Name</span>
+                  <span class="field-value">Abc Printing and Advert</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Background Images</span>
+                  <span class="field-value">img1, img2 ...</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Username</span>
+                  <span class="field-value">Abebe Kebede</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-label">Contacts</span>
+                  <span class="field-value">+251 911 213 12</span>
+                </div>
+              </div>
+            </section>
+            <p class="rotation-note" aria-live="polite">
+              The menu always rotates clockwise to the selected section.
+            </p>
+          </main>
+        </section>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
