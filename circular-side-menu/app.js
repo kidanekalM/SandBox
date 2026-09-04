@@ -2,7 +2,7 @@ const frame = document.querySelector(".app-frame");
 const orbit = document.querySelector(".orbit-wrap");
 const nodes = [...document.querySelectorAll(".orbit-node")];
 const toggles = [...document.querySelectorAll(".menu-toggle")];
-const visibleAnchorAngle = 288;
+const visibleAnchorAngle = 72;
 let currentRotation = 0;
 
 function normalizeAngle(angle) {
@@ -19,6 +19,7 @@ function setActiveState(menu) {
   currentRotation += clockwiseStep;
 
   frame.dataset.active = menu;
+  orbit.classList.remove("is-expanded");
   orbit.style.setProperty("--rotation-duration", `${slotCount * 220}ms`);
   orbit.style.setProperty("--orbit-rotation", `${currentRotation}deg`);
 
@@ -29,12 +30,28 @@ function setActiveState(menu) {
   });
 }
 
+orbit.addEventListener("pointerleave", () => {
+  orbit.classList.remove("is-expanded");
+});
+
+orbit.addEventListener("focusin", () => {
+  if (frame.dataset.active) orbit.classList.add("is-expanded");
+});
+
+orbit.addEventListener("focusout", (event) => {
+  if (!orbit.contains(event.relatedTarget)) orbit.classList.remove("is-expanded");
+});
+
 function activeMenuFromInputs() {
   const checked = toggles.find((toggle) => toggle.checked);
   return checked ? checked.id.replace("menu-", "") : null;
 }
 
 nodes.forEach((node) => {
+  node.addEventListener("pointerenter", () => {
+    if (node.classList.contains("is-active")) orbit.classList.add("is-expanded");
+  });
+
   node.addEventListener("keydown", (event) => {
     if (event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();

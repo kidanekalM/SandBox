@@ -110,6 +110,7 @@ body {
 .orbit-wrap {
   --orbit-rotation: 0deg;
   --rotation-duration: 0ms;
+  --orbit-radius: 136px;
   position: absolute;
   top: 54%;
   left: 50%;
@@ -122,7 +123,8 @@ body {
 }
 
 .orbit-wrap.no-transition,
-.orbit-wrap.no-transition .orbit-node {
+.orbit-wrap.no-transition .orbit-node,
+.orbit-wrap.no-transition .orbit-core {
   transition: none !important;
 }
 
@@ -183,11 +185,19 @@ body {
 
 .orbit-node {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 112px;
+  margin: -56px 0 0 -56px;
   cursor: pointer;
   text-align: center;
   color: var(--text);
-  transition: transform 720ms ease, filter 320ms ease;
+  transform:
+    rotate(var(--node-angle))
+    translateY(calc(var(--orbit-radius) * -1))
+    rotate(calc(var(--node-angle) * -1))
+    rotate(calc(var(--orbit-rotation) * -1));
+  transition: transform var(--rotation-duration) linear, filter 320ms ease;
 }
 
 .node-photo {
@@ -208,6 +218,13 @@ body {
     filter 320ms ease;
 }
 
+.node-photo img {
+  width: 58%;
+  height: 58%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
 .node-title {
   display: block;
   width: 124px;
@@ -222,68 +239,42 @@ body {
 
 .logo-node {
   background: #dcdcdc;
-  font-size: 4.6rem;
 }
 
 .photo-services {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.18)),
-    radial-gradient(circle at 70% 20%, #f6d6c1 0 16%, transparent 17%),
-    radial-gradient(circle at 35% 52%, #b5763d 0 10%, transparent 11%),
-    linear-gradient(135deg, #edc7b1 0 22%, #cf9b74 22% 36%, #f1e6dd 36% 57%, #1a232d 57% 100%);
+  background: #d7ebe8;
 }
 
 .photo-orders {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.14), rgba(0, 0, 0, 0.08)),
-    linear-gradient(135deg, #d8d8d8 0 45%, #cab699 45% 50%, #ececec 50% 100%);
+  background: #f0dfc4;
 }
 
 .photo-gallery {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
-    linear-gradient(180deg, #f4f4f4 0 22%, #55473d 22% 24%, #e3d2bf 24% 28%, #4f4038 28% 30%, #fafafa 30% 100%);
+  background: #e9d7e9;
 }
 
 .photo-products {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)),
-    linear-gradient(135deg, #b7d3de 0 42%, #6e8a8f 42% 58%, #d9edea 58% 100%);
+  background: #dbe4f2;
 }
 
 .node-services {
-  top: 8px;
-  left: 139px;
   --node-angle: 0deg;
 }
 
 .node-orders {
-  top: 100px;
-  left: 16px;
   --node-angle: 72deg;
 }
 
 .node-gallery {
-  top: 250px;
-  left: 56px;
   --node-angle: 144deg;
 }
 
 .node-products {
-  top: 266px;
-  left: 226px;
   --node-angle: 216deg;
 }
 
 .node-profile {
-  top: 122px;
-  left: 262px;
   --node-angle: 288deg;
-}
-
-.orbit-node {
-  transform: rotate(calc(var(--orbit-rotation) * -1));
-  transition: transform var(--rotation-duration) linear, filter 320ms ease;
 }
 
 .orbit-node:focus-visible .node-photo {
@@ -310,6 +301,16 @@ body {
 
 .orbit-node.is-active .node-title {
   font-weight: 700;
+}
+
+.app-frame[data-active] .orbit-node:not(.is-active) .node-photo {
+  opacity: 0.62;
+  filter: grayscale(0.35) saturate(0.72);
+  transform: scale(0.92);
+}
+
+.app-frame[data-active] .orbit-node:not(.is-active) .node-title {
+  opacity: 0.62;
 }
 
 .detail-pane {
@@ -478,16 +479,23 @@ body {
 }
 
 #menu-home:checked ~ .app-frame .orbit-wrap {
-  left: 40px;
-  transform: translate(-36%, -50%) rotate(var(--orbit-rotation));
+  left: -255px;
+  transform: translate(0, -50%) rotate(var(--orbit-rotation));
 }
 
 #menu-services:checked ~ .app-frame .orbit-wrap,
 #menu-orders:checked ~ .app-frame .orbit-wrap,
 #menu-gallery:checked ~ .app-frame .orbit-wrap,
 #menu-profile:checked ~ .app-frame .orbit-wrap {
-  left: 40px;
-  transform: translate(-36%, -50%) rotate(var(--orbit-rotation));
+  left: -255px;
+  transform: translate(0, -50%) rotate(var(--orbit-rotation));
+}
+
+@media (min-width: 981px) {
+  .app-frame[data-active] .orbit-wrap.is-expanded {
+    left: 24px !important;
+    transform: translate(0, -50%) rotate(var(--orbit-rotation)) !important;
+  }
 }
 
 #menu-services:checked ~ .app-frame .node-services .node-photo,
@@ -524,6 +532,12 @@ body {
     transform: translateX(-50%) rotate(var(--orbit-rotation));
     width: 340px;
     height: 340px;
+    --orbit-radius: 118px;
+  }
+
+  .app-frame[data-active] .orbit-wrap {
+    left: 50% !important;
+    transform: translateX(-50%) rotate(var(--orbit-rotation)) !important;
   }
 
   .idle-card {
@@ -532,31 +546,6 @@ body {
 
   .orbit-ring {
     inset: 52px;
-  }
-
-  .node-services {
-    top: 6px;
-    left: 114px;
-  }
-
-  .node-orders {
-    top: 88px;
-    left: 4px;
-  }
-
-  .node-gallery {
-    top: 220px;
-    left: 42px;
-  }
-
-  .node-products {
-    top: 230px;
-    left: 196px;
-  }
-
-  .node-profile {
-    top: 108px;
-    left: 224px;
   }
 
   .detail-card,
